@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  angular_app:
+    container_name: angular_app
+    image: pee-angular_app:1.0.0    
+    build: front-prepagas
+    ports:
+      - "4200:4200"
+    depends_on: 
+      - express_app
+  express_app:
+    container_name: express_app
+    image: pee-express_app:1.0.0  
+    build: ./
+    ports: 
+      - "3000:3000"
+    depends_on: 
+      - mongo_db
+  mongo_db:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+
+# version: '3.8'
+
+# services:
+#   angular:
+#     hostname: localhost
+#     # container_name: front-prepagas
+#     build: front-prepagas
+#     ports:
+#       - "8181:80"
+#   express:
+#     build: server
+#     ports: 
+#       - "3000:3000"
+#     links:
+#       - database
+#   database:
+#     image: mongo
+#     ports:
+#       - "27017:27017"
+
+
+
+
+
+
+
+
+
+# ves
