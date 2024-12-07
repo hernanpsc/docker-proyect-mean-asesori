@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ItemRestApiService {
   apiURL = 'https://api.mercadolibre.com/sites/MLA';
   // apiUrl = 'http://localhost:5200';
-  apiUrl = 'https://api-rest-13-11.onrender.com'
+  apiUrl = 'https://cotizador.tuchat.com.ar'
 
   constructor(private http: HttpClient) {}
 

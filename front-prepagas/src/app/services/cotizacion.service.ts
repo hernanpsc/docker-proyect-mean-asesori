@@ -30,7 +30,8 @@ export class CotizacionService {
   getPlanes(){
     const url = `${this.url}/planes`;
     this.planes = this.http.get(url);
-
+    // console.log("this.planes en el servicio");
+    // console.log(this.planes)
     return this.planes;
   }
 
@@ -38,12 +39,16 @@ export class CotizacionService {
   getClinicas(){
     const url = `${this.url}/clinicas`;
     this.clinicas = this.http.get(url);
+    // console.log("this.clinicas en el servicio");
+    // console.log(this.clinicas)
     return this.clinicas;
   }
 
   getEmpresas(){
     const url = `${this.url}/empresas`;
     this.empresas = this.http.get(url);
+    // console.log("this.empresas en el servicio")
+    // console.log(this.empresas)
     return this.empresas;
   }
   

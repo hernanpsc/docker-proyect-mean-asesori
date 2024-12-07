@@ -34,7 +34,12 @@ interface Country {
 interface ResponseData {
   planes: any[]; // Aquí debes definir el tipo correcto de los datos de planes
 }
-
+interface ClinicOption {
+  nombre: any;
+  value: any;
+  label: string;
+  entity: string; // Asegúrate de que esto coincide con la estructura real
+}
 @Component({
 
   
@@ -103,12 +108,13 @@ selectedRating : FormControl = new FormControl('');
   formFilter: FormGroup;
   planeSelect = this.compareProdList();
   dropdownSettings: {};
-  dropdownClinica: SelectItem[] = [];
+  dropdownClinica: ClinicOption[];
+
   selectedClinica: any[] = [];
   selectedClinicaControl = new FormControl([]);
   rowsPerPageOptions = [5, 10, 20];
   tieredItems: MenuItem[] = [];
-  
+
   formDataInicial: FormGroup; // Formulario inicial con valores predeterminados
   formDataInicialJSON: any[];
   sidebarVisible = false; // Por defecto, el sidebar está visible
@@ -379,9 +385,9 @@ hideButton() {
 }
 
 onItemSelect(selectedClinica: any){
-  // console.log('onItemSelect', selectedClinica);
-  //  // console.log(this.tempArrayShow);
-  //  // console.log(this.tempArrayHide);
+  console.log('onItemSelect', selectedClinica);
+   console.log(this.tempArrayShow);
+   console.log(this.tempArrayHide);
   
   
 
@@ -390,14 +396,14 @@ onItemSelect(selectedClinica: any){
 
   this.productosFiltrados = this.products;
 
-// console.log(this.products)
+console.log(this.products)
   var seleccion = this.selectedClinica
   for( let i=0;i<seleccion.length;i++){
-    // console.log(seleccion[i])
+    console.log(seleccion[i])
   }
   var planes = this.productosFiltrados;
   this.showandHide = this.productosFiltrados;
-// planes = this.tempArrayHide.concat(this.tempArrayShow);
+planes = this.tempArrayHide.concat(this.tempArrayShow);
   var clinicas_seleccionadas = seleccion.map(function (selectas, index, array) {
     return selectas.nombre; 
 });
@@ -426,11 +432,11 @@ if ( validation == clinicas_seleccionadas.length){
 }};
 }
 
-// console.log(planes)
+console.log(planes)
 this.tempArrayHide  = planes.filter((e:any)=> e.validacionclinica != "show");
 this.tempArrayShow  = planes.filter((e:any)=> e.validacionclinica == "show");
-// console.log(this.tempArrayShow)
-// console.log(this.tempArrayHide)
+console.log(this.tempArrayShow)
+console.log(this.tempArrayHide)
 this.productosFiltrados = this.tempArrayShow;
 this.actualizarProductos(this.productosFiltrados)
 
@@ -441,9 +447,9 @@ this.productoService.activarFuncionEnComponenteB();
 }   
 
 onItemDeSelect(item: any){
-  // console.log('onItemSelect', item);
-  //  // console.log(this.tempArrayShow);
-  //  // console.log(this.tempArrayHide);
+  console.log('onItemSelect', item);
+   console.log(this.tempArrayShow);
+   console.log(this.tempArrayHide);
   
  
 
@@ -600,19 +606,27 @@ closeButon() {
       next: ([result]: [any]) => {
         const [clinicas, planes, empresas] = result;
         this.clinicas = clinicas;
-        this.dropdownClinica = this.clinicas;
+        this.dropdownClinica = this.clinicas; // Asignación correcta
         this.selectedClinica = [];
         this.secureProducts = planes;
         this.planes = planes;
         this.empresas = empresas;
+
+        console.log("this.clinicas en NG ONINIT")
+        console.log(this.clinicas)
+        console.log("this.planes  en NG ONINIT")
+        console.log(this.planes)
+        console.log("this.empresas ")
+        console.log(this.empresas)
+        console.log("this.dropdownClinica")
+        console.log(this.dropdownClinica)
       },
       error: (error: any) => {
         // Manejar errores aquí si es necesario
         console.error(error);
       }
     });
-    
-    
+  
     
     
 

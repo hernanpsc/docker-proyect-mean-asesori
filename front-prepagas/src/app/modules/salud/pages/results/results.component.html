@@ -67,7 +67,11 @@
  
   <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round" style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
     <div class="d-flex flex-wrap">
-      <p-multiSelect
+      <select [(ngModel)]="selectedClinica">
+        <option *ngFor="let clinica of dropdownClinica" [value]="clinica.value">{{ clinica.nombre }}</option>
+      </select>
+      
+     <!--  <p-multiSelect
       class="custom-ms"
       [options]="dropdownClinica"
       display="chip" 
@@ -76,25 +80,25 @@
       [selectedItemsLabel]="'Selected Clinicas'"
       [(ngModel)]="selectedClinica"
       optionLabel="nombre"
-      (onChange)="onItemSelect($event)">
+      (onChange)="onItemSelect($event)"> -->
         <!-- Plantilla para elementos seleccionados -->
-        <ng-template let-option pTemplate="selectedItems">
+      <!--  <ng-template let-option pTemplate="selectedItems">
           <div class="selected-chips">
             <div *ngFor="let item of selectedClinica" >
-              <strong class="p-chip p-highlight">{{ item.nombre }} <i class="pi pi-times-circle" (click)="removeSelection(item)"></i></strong>
+              <strong class="p-chip p-highlight">{{ item.nombre }} <i class="pi pi-times-circle" (click)="removeSelection(item)"></i></strong>-->
               <!-- Icono de cruz (x) -->
-            </div>
+             <!-- </div>
           </div>
           <div class="no-selected-items" *ngIf="!selectedClinica || selectedClinica.length === 0">Selecciona Clínicas</div>
-        </ng-template>
+        </ng-template> -->
     
         <!-- Plantilla para elementos en la lista -->
-        <ng-template let-option pTemplate="item">
+       <!-- <ng-template let-option pTemplate="item">
           <div class="item">
             {{ option.entity }}
           </div>
         </ng-template>
-      </p-multiSelect>
+      </p-multiSelect> -->
    
     </div>
     <!-- <select class="form-select d-inline-block w-auto me-1">
