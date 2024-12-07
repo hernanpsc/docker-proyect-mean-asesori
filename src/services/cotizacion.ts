@@ -13,28 +13,28 @@ import PlanesModel from './../models/planes';
 import EmpresaModel from './../models/empresas';
 export const  calcularPrecio = async (req: Request, res: Response) => {
  try{
-  // console.log("grupo"); console.log(req.body.grupo);
+  console.log("grupo"); console.log(req.body.grupo);
 
-// console.log("grupo"); console.log(req.body.grupo);
-// console.log("empresa_prepaga"); console.log(req.body.empresa_prepaga);
-// console.log("edad_1"); console.log(req.body.edad_1);
-// console.log("edad_2"); console.log(req.body.edad_2);    
-// console.log("numkids"); console.log(req.body.numkids); 
-// console.log("plan_type"); console.log(req.body.plan_type);
-// console.log("tipo"); console.log(req.body.tipo);
-// console.log("agree"); console.log(req.body.agree);
-// console.log("aporteOS"); console.log(req.body.aporteOS);
-// console.log("sueldo"); console.log(req.body.sueldo);
-// console.log("aporte"); console.log(req.body.aporte);
-// console.log("monoadic"); console.log(req.body.monoadic);
-// console.log("cantAport"); console.log(req.body.cantAport);
-// console.log("afinidad"); console.log(req.body.afinidad);
-// console.log("bonAfinidad"); console.log(req.body.bonAfinidad);
-// console.log("supras"); console.log(req.body.supras);
-// console.log("segvida"); console.log(req.body.segvida);
-// console.log("segvida1"); console.log(req.body.segvida1);
-// console.log("region"); console.log(req.body.region);
-// console.log("coeficientes"); console.log(req.body.coeficientes);
+console.log("grupo"); console.log(req.body.grupo);
+console.log("empresa_prepaga"); console.log(req.body.empresa_prepaga);
+console.log("edad_1"); console.log(req.body.edad_1);
+console.log("edad_2"); console.log(req.body.edad_2);    
+console.log("numkids"); console.log(req.body.numkids); 
+console.log("plan_type"); console.log(req.body.plan_type);
+console.log("tipo"); console.log(req.body.tipo);
+console.log("agree"); console.log(req.body.agree);
+console.log("aporteOS"); console.log(req.body.aporteOS);
+console.log("sueldo"); console.log(req.body.sueldo);
+console.log("aporte"); console.log(req.body.aporte);
+console.log("monoadic"); console.log(req.body.monoadic);
+console.log("cantAport"); console.log(req.body.cantAport);
+console.log("afinidad"); console.log(req.body.afinidad);
+console.log("bonAfinidad"); console.log(req.body.bonAfinidad);
+console.log("supras"); console.log(req.body.supras);
+console.log("segvida"); console.log(req.body.segvida);
+console.log("segvida1"); console.log(req.body.segvida1);
+console.log("region"); console.log(req.body.region);
+console.log("coeficientes"); console.log(req.body.coeficientes);
 
 // const group = req.body.grupo;
 

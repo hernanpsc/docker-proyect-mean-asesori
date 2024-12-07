@@ -14,7 +14,7 @@ export function grupoFamiliar(age0, age1, kids,group) {
 	} else if( group === 2){
 		edad1 = 0;
 	}else if (group === 3  ){
-		numhijos = 0;
+	numhijos = 0;	
 
 	}else{}
 
